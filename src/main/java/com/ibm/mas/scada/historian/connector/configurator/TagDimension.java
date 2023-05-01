@@ -41,8 +41,8 @@ public class TagDimension {
     private static String tenantId;
     private static String token;
     private static RestClient restClient;
-    private static int apiVersion = 1;
-    private static int scadaType = 2;
+    private static int apiVersion = 2;
+    private static int scadaType = 1;
 
     public TagDimension(Config config, TagDataCache tc) {
         if (config == null || tc == null) {
@@ -68,9 +68,9 @@ public class TagDimension {
         this.schemaName = iotp.getString("schemaName");
         String key = iotp.getString("apiKey");
         this.token = iotp.getString("apiToken");
-        String asKey = iotp.getString("X_API_KEY");
-        String asToken = iotp.getString("X_API_TOKEN");
-        String asEmail = iotp.getString("MAM_USER_EMAIL");
+        String asKey = iotp.getString("asKey");
+        String asToken = iotp.getString("asToken");
+        String asEmail = iotp.getString("mamUserMail");
         this.apiVersion = iotp.optInt("apiVersion", 2);
         this.baseUrl = "https://" + iotp.getString("asHost");
         this.tenantId = iotp.getString("tenantId");
@@ -323,26 +323,6 @@ public class TagDimension {
 
         entityTypeObj.put("name", entityTypeName);
         entityTypeObj.put("description", entityTypeName);
-        // dataItemDtoArray.put(createDataDtoObjectV2("evt_timestamp", "EventA",
-        // "NUMBER", "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("intvalue", "EventA", "NUMBER",
-        // "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("floatvalue", "EventA", "NUMBER",
-        // "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("stringvalue", "EventA",
-        // "LITERAL", "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("datevalue", "EventA", "LITERAL",
-        // "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("type", "EventA", "NUMBER",
-        // "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("unit", "EventA", "LITERAL",
-        // "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("decimalAccuracy", "EventA",
-        // "NUMBER", "METRIC"));
-        // dataItemDtoArray.put(createDataDtoObjectV2("tag", "EventA", "LITERAL",
-        // "METRIC"));
-        // // dataItemDtoArray.put(createDataDtoObjectV2("evt_name", "EventA",
-        // "LITERAL", "METRIC"));
         // Defining the metrics
         dataItemDtoArray.put(createDataDtoObjectV2("evt_timestamp", "scadaevent", "TIMESTAMP", "METRIC"));
         dataItemDtoArray.put(createDataDtoObjectV2("value", "scadaevent", "NUMBER", "METRIC"));
@@ -359,7 +339,6 @@ public class TagDimension {
         dataItemDtoArray.put(createDataDtoObjectV2("SITE", "scadaevent", "LITERAL", "DIMENSION"));
         entityTypeObj.put("dataItemDto", dataItemDtoArray);
 
-        // evtDtoArray.put(createEventDtoObjectV2("EventA", "evt_timestamp"));
         evtDtoArray.put(createEventDtoObjectV2("scadaevent", "evt_timestamp"));
         entityTypeObj.put("eventDto", evtDtoArray);
         entityObj.put(entityTypeObj);

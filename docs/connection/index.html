@@ -169,9 +169,9 @@
                     </li>
                     <li><code>startDate</code>: Extract device data from the specified date. Valid format is <code>"YYYY-MM-DD
                       HH:MM:SS"</code></li>
-                    <li><code>dbType</code>: Type of database server configured as SCADA historian. The default value is
-                      <code>"pisql"</code>
-                      (OSIPI historian). The other possibility is <code>"mssql"</code>(MicrosoftSQL).
+                    <li><code>dbType</code>: Type of database server configured as SCADA historian. If not specified,
+                      database type is taken as MYSQL. Feasible values are <code>"pisql"</code> (OSIPI historian) or
+                      <code>"mssql"</code>(MicrosoftSQL).
                     </li>
                     <li><code>schema</code>: Schema name. Used to construct the SQL query (SELECT* FROM
                       &lt;schema&gt;.&lt;database&gt;)</li>
@@ -196,14 +196,14 @@
                       service. It is usually the first element in the <code>url</code> string.</li>
                     <li><code>host</code>: Specifies IoT tool host to connect to MAS to send device data</li>
                     <li><code>port</code>: Specifies port to connect to MAS.</li>
-                    <li><code>apiKey</code>: Specifies IoT tool API Key from to configure device types, devices,
+                    <li><code>apiKey</code>: Specifies IoT tool API Key to configure device types, devices,
                       interfaces and send
                       MQTT messages.</li>
                     <li><code>apiToken</code>: Specifies IoT tool API Token to configure device types, devices,
                       interfaces and
                       send MQTT messages.</li>
                     <li><code>schemaName</code>: Specifies the schema to configure dimensions.</li>
-                    <li><code>tenantId</code>: Specifies tenant id.</li>
+                    <li><code>tenantId</code>: Specifies tenant ID.</li>
                     <li><code>asHost</code>: Specifies MAS Monitor host to configure dimensions.</li>
                     <li><code>asKey</code>: Specifies Monitor API Key to configure dimensions.</li>
                     <li><code>asToken</code>: Specifies Monitor API Token to configure dimensions.</li>
