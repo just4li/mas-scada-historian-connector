@@ -29,8 +29,7 @@
         "jdbcUrl": "jdbc:db2://db2w-bklaiok.us-south.db2w.cloud.ibm.com:50001/BLUDB:sslConnection=true;",
         "schema": "BLUADMIN",
         "database": "BLUDB",
-        "user": "bluadmin",
-        "password": "g2XowurIc27fH43cG5Qi_BNabVf3@"
-    } 
+        "user": "xxxxxxxxxx",
+        "password": "xxxxxxxxxxxxxxxxxxxxx"
+    }
 }
-

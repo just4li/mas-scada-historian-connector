@@ -5,6 +5,8 @@ libs
 tmp
 buildimg
 venv
+.pre-commit-config.yaml
+.secrets.baseline
 
 # Visual Studio Code
 .settings/
